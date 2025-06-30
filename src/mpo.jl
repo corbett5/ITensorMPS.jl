@@ -869,6 +869,7 @@ function ITensors.contract(
   lCᵢ = Index[]
   R = ITensor(true)
   for i in 1:(N - 2)
+    @show i
     RABᵢ = R * A[i] * B[i]
     left_inds = [sA[i]..., sB[i]..., lCᵢ...]
     C[i], R = factorize(
